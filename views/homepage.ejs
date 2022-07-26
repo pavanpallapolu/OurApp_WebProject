@@ -1,0 +1,34 @@
+<%- include("partials/header1"); -%>
+
+<%  if(!posts) { %>
+    <div class="desc">
+      <div >
+        <h1>Hello <%=username%>, your feed is empty.</h1>
+        <p>
+          Your feed displays the latest posts from the people you follow.If you don't have any friends to follow that's okay; you can use the
+          "Serach" feature in the top menu bar to find content written by people with similar interests and then follow them.
+        </p>
+      </div>
+    </div>
+<%  }   else if(posts.length>=0){  %>
+    <h3 class="m-4" style="text-align:center">The Latest From Those You Follow.</h3>
+    <div class="postcon">
+      <div class="width">
+        <% for(var i=0;i<posts.length;i++){ %>
+          <a class="mail mb-1" type="button" href="/post/<%=posts[i]._id%>">
+            <span class="nav-link profile">
+              <img class="pfpic" src="https://www.gravatar.com/avatar/<%=posts[i].user%>" alt="pf">
+              <!-- <i class="fa-solid fa-user"></i> -->
+            </span>
+            <span class="ms-2"><b><%=posts[i].postTitle%></b> by <%=posts[i].user%> on <%=posts[i].date%></span>
+          </a>
+      <%  } %>
+      </div>
+    </div>
+<%  } %>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/chat.js"></script>
+
+<%- include("partials/footer"); -%>

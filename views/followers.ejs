@@ -1,0 +1,48 @@
+<%- include("partials/header1"); -%>
+
+<!-- jQuery -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+
+  <div class="width p-2 mx-auto">
+    <div class="d-flex align-items-center">
+      <a href="/<%=username%>" class="nav-link profile">
+        <img class="pfpic" src="https://www.gravatar.com/avatar/<%=imgUrl%>" alt="pf">
+        <!-- <i class="fa-solid fa-user"></i> -->
+      </a>
+      <span class="username ms-2 "><%=username%></span>
+      <%  if(d_follow){ %>
+        <div class="follow ms-4 btn " type="button" >
+          <span><%=d_follow%></span>
+          <i class="fa-solid"></i>
+        </div>
+    <%  } %>
+    </div>
+    <div class="d-flex pfcon">
+      <a id="posts" href="/<%=username%>">Posts</a>
+      <a class="highlight" id="followers" href="/<%=username%>/followers">Followers</a>
+      <a id="following" href="/<%=username%>/following">Following</a>
+    </div>
+  </div>
+
+  <div class="postcon">
+    <div class="width">
+      <% for(var i=0;i<follow.length;i++){ %>
+        <form  action="/<%=follow[i].follower%>" method="get">
+          <button class="mail mb-1" type="submit" name="button">
+            <a href="/<%=follow[i].follower%>" class="nav-link profile">
+              <img class="pfpic" src="https://www.gravatar.com/avatar/<%=follow[i].follower%>" alt="pf">
+              <!-- <i class="fa-solid fa-user"></i> -->
+            </a>
+            <span class="font2"><%=follow[i].follower%></span>
+          </button>
+        </form>
+    <%  } %>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="../js/profile.js"></script>
+  <script src="../js/chat.js"></script>
+  <!-- <script src="js/index.js"></script> -->
+
+  <%- include("partials/footer"); -%>

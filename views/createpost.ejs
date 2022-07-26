@@ -1,0 +1,17 @@
+<%- include("partials/header1"); -%>
+
+<div class="createpost">
+  <form class="post" action="/post/save" method="post">
+     <label class="mb-2">Title</label>
+     <input class="form-control mb-4" autocomplete="off" autocorrect="off" spellcheck="false" ype="text" name="postTitle">
+     <label class="mb-2">Body Content</label>
+     <textarea class="form-control mb-4"  name="postBody" rows="12" cols="80"></textarea>
+     <button type="submit" class="btn btn-primary" value="<%=pfname%>" name="button">Save New Post</button>
+  </form>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="../js/profile.js"></script>
+<script src="../js/chat.js"></script>
+
+<%- include("partials/footer"); -%>

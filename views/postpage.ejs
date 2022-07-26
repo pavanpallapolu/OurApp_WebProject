@@ -1,0 +1,35 @@
+<%- include("partials/header1"); -%>
+
+<% if(sucmsg!=""){ %>
+  <div class="createpost">
+    <div class="post">
+       <button type="button" class="btn btn-success btn-block" name="button"><%=sucmsg%></button>
+    </div>
+  </div>
+<% } %>
+
+ <div class="postcon mt-4">
+   <div class="width">
+         <div class="d-flex align-items-center">
+           <h3 class="d-inline-block me-auto"><%=post.postTitle%></h3>
+           <a href="/post/edit<%=post._id%>"><i class="p-2 fa-solid fa-pen-to-square"></i></a>
+           <a href="/post/delete/<%=post._id%>"><i class="fa-solid fa-trash"></i></a>
+         </div>
+         <button class="mail mb-1" type="submit" name="button">
+           <a href="/<%=username%>" class="nav-link profile">
+             <img class="pfpic" src="https://www.gravatar.com/avatar/<%=imgUrl%>" alt="pf">
+             <!-- <i class="fa-solid fa-user"></i> -->
+           </a>
+           <span class="ms-2">Posted by <a href="/<%=post.user%>"><%=post.user%></a> on <%=post.date%></span>
+         </button>
+         <div class="postborder">
+            <p><%=post.postBody%></p>
+         </div>
+   </div>
+ </div>
+
+ <script src="/socket.io/socket.io.js"></script>
+ <script src="../js/profile.js"></script>
+ <script src="../js/chat.js"></script>
+
+<%- include("partials/footer"); -%>

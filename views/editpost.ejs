@@ -1,0 +1,35 @@
+<%- include("partials/header1"); -%>
+
+<div class="createpost">
+  <form class="post" action="/post/edit<%=postId%>" method="post">
+     <label class="mb-2">Title</label>
+     <input class="form-control mb-4" type="text" name="postTitle">
+     <label class="mb-2">Body Content</label>
+     <textarea class="form-control mb-4" name="postBody" rows="12" cols="80"></textarea>
+     <button type="submit" class="btn btn-primary" value="<%=pfname%>" name="button">Edit Post</button>
+  </form>
+</div>
+
+
+<script type="text/javascript">
+   $(document).ready(function(){
+     const url="http://localhost:3000";
+     var postId=document.querySelector(".post").getAttribute("action");
+     var postId=postId.slice(10);
+     fetch(url+"/f/post/"+postId)
+     .then(res=>res.json())
+     .then(post=>{
+       document.querySelector("input[name='postTitle']").value=post.postTitle;
+       document.querySelector("textarea[name='postBody']").value=post.postBody;
+     })
+     .catch((error) => {
+       console.error('Error:', error);
+     });
+   })
+</script>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="../js/profile.js"></script>
+<script src="../js/chat.js"></script>
+
+<%- include("partials/footer"); -%>

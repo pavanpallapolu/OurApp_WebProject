@@ -1,0 +1,145 @@
+
+/* body{
+  font-family: 'Montserrat', sans-serif;
+} */
+label{
+  font-weight:200;
+  margin-bottom:5px;
+}
+
+.vsize{
+  font-size: 0.75rem;
+}
+
+.center{
+  text-align:center
+}
+
+.item{
+  width:100%;
+  margin-bottom: 20px;
+}
+
+.p1{
+  font-weight:400;
+  opacity:0.5;
+  font-size: 1.25rem;
+}
+
+/* .sign-in{
+  width:80%;
+} */
+
+.login{
+  display: flex;
+}
+
+.sign-in{
+  width:35%;
+  margin-left:auto;
+}
+
+.matter{
+  width:55%;
+}
+
+.login{
+  align-items: center;
+}
+
+
+.mar{
+  margin-top: 7%;
+  margin-bottom:7%;
+}
+
+.heading1{
+  font-size:3.5rem;
+  font-weight: 300;
+}
+
+.formcontrol{
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  appearance: none;
+  border-radius: 0.375rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.formcontrol:focus{
+  outline:none;
+}
+
+@media (max-width:992px){
+   .login{
+     flex-direction: column;
+   }
+   .matter{
+     width:100%;
+     margin-bottom:2rem;
+   }
+   .sign-in{
+     width:100%;
+   }
+   .header{
+     flex-direction: column;
+   }
+   .formcontrol{
+     width:100%;
+     margin-bottom: 0.5rem;
+     background-color:#4C4E52;
+     border:none;
+     color:white;
+     padding:0.25rem 0.75rem;
+   }
+
+
+
+   .heading1{
+     font-size:3rem;
+   }
+
+  .snbtn{
+    width:80px;
+    border-radius: 2px;
+    height:35px;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-color: #545b62;
+  }
+
+   .formcontrol{
+      border-radius: 2px;
+   }
+
+   .loginform{
+     flex-direction: column;
+     width:100%;
+   }
+}
+
+
+.snbtn{
+  flex-shrink:0;
+}
+
+.invalid{
+  background-color:rgba(240,128,128,0.4);
+  color:indianred;
+  width:100%;
+  margin-top:4rem;
+  border-radius:0.25rem;
+  padding-top:0.75rem;
+  padding-bottom:0.75rem;
+  border:none;
+  font-size: 1.1rem;
+  color:rgb(205,92,92);
+}
