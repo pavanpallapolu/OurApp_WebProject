@@ -16,7 +16,7 @@ if(follow){
   follow.addEventListener("click",function(){
     const val=follow.children[0].innerHTML;
     const username=user.innerHTML;
-    fetch(url+"/f/follow"+"/"+username)
+    fetch("/f/follow"+"/"+username)
     .then((res)=>{
       if(res.status==200)
       {
@@ -73,7 +73,7 @@ input.addEventListener("input",function(){
   document.querySelector(".resultcard").innerHTML="";
   // console.log(input.value);
   // console.log("ok",JSON.stringify(input.value));
-  fetch(url+"/f/search",{
+  fetch("/f/search",{
   method: 'POST', // or 'PUT'
   headers: {
     'Content-Type': 'application/json',

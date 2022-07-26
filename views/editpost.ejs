@@ -16,7 +16,7 @@
      const url="http://localhost:3000";
      var postId=document.querySelector(".post").getAttribute("action");
      var postId=postId.slice(10);
-     fetch(url+"/f/post/"+postId)
+     fetch("/f/post/"+postId)
      .then(res=>res.json())
      .then(post=>{
        document.querySelector("input[name='postTitle']").value=post.postTitle;
