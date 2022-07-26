@@ -20,7 +20,7 @@ const hour = 3600000;
 
 const app=express();
 
-const uri=`mongodb+srv://admin-pavan:<${process.env.DBPASSWORD}>@cluster0.zmugtyo.mongodb.net/OurApp`;
+const uri=`mongodb+srv://admin-pavan:${process.env.DBPASSWORD}@cluster0.zmugtyo.mongodb.net/OurApp`;
 
 async function connectdb(){
   try{
@@ -43,7 +43,7 @@ const sessionMiddleware=session({
   resave: false,
   saveUninitialized: false,
   cookie:{maxAge:hour},
-  store: new MongoStore({ mongoUrl: 'mongodb://localhost:27017/OurApp', })
+  store: new MongoStore({ mongoUrl: uri, })
 });
 
 app.use(sessionMiddleware);
