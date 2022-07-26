@@ -74,7 +74,7 @@ app.use("/follow",followsRouter);
 app.use("/post",postsRouter);
 app.use("/f",fetchRouter);
 
-const port=process.env.port||3000;
+const port=process.env.PORT||3000;
 
 const server=app.listen(port,function(){
   console.log("Server has started Successfully");
